@@ -1,12 +1,19 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./App.css";
-
 const BottomRow = () => {
+  const [quarter, setQuarter] = useState(0);
+  const [down, setDown] = useState(0);
+
+
+
   return (
     <div className="bottomRow">
       <div className="down">
         <h3 className="down__title">Down</h3>
-        <div className="down__value">3</div>
+        <div className="down__value">{down}</div>
+       <button className="boardBtn" onClick = {() => setDown(down + 1)}>Dclick</button>
+        <button className="boardBtn" onClick = {() => setDown(0)}>Clear</button>
+
       </div>
       <div className="toGo">
         <h3 className="toGo__title">To Go</h3>
@@ -18,7 +25,9 @@ const BottomRow = () => {
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Quarter</h3>
-        <div className="quarter__value">4</div>
+        <div className="quarter__value">{quarter}</div>
+        <button className="boardBtn" onClick = {() => setQuarter(quarter + 1)}>Qclick</button>
+        <button className="boardBtn" onClick = {() => setQuarter(0)}>Clear</button>
       </div>
     </div>
   );
