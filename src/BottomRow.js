@@ -2,9 +2,12 @@ import React, {useState, useEffect} from "react";
 import "./App.css";
 const BottomRow = () => {
   const [quarter, setQuarter] = useState(0);
-  const [down, setDown] = useState(0);
+  const [down, setDown] = useState(1);
 
-
+ {/* function theDown(){
+  if (down >= 5 ){
+   return (down = 1)
+  }  */}
 
   return (
     <div className="bottomRow">
@@ -12,7 +15,7 @@ const BottomRow = () => {
         <h3 className="down__title">Down</h3>
         <div className="down__value">{down}</div>
        <button className="boardBtn" onClick = {() => setDown(down + 1)}>Dclick</button>
-        <button className="boardBtn" onClick = {() => setDown(0)}>Clear</button>
+        <button className="boardBtn" onClick = {() => setDown(1)}>Clear</button>
 
       </div>
       <div className="toGo">
